@@ -43,6 +43,14 @@ An ubuntu 18.04 image is used. Is easier to manage and clean. :floppy_disk:
 
 ## Usage
 
+Before running the image check the run script, this script is fundamental to make an Android build and delivery.
+
+Inside this script you can specify the steps to build and deliver the image.
+
+[run.sh](run.sh)
+
+---
+
 You may start the image with some environment variables.
 
 Also you need to link your code to the docker container as a volume to the path /android-project/source.

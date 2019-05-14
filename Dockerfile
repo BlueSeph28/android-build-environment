@@ -50,4 +50,4 @@ RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 ADD basic_upload_apks_service_account.py /android-project
 ADD run.sh /android-project
 
-ENTRYPOINT [ "bash", "/run.sh" ]
+ENTRYPOINT [ "bash", "/android-project/run.sh" ]
