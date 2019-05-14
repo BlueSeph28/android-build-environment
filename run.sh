@@ -11,7 +11,7 @@
 # GPLAYKEY - Path to the P12 Key for the access to upload your APK
 
 # First you need to go to the path of the source
-cd ./source
+cd /android-project/source
 
 # Deployment notification example
 aws lambda invoke --function-name Deployment-notifier --log-type Tail --payload "{ \"success\":\"working\" }" outputfile.txt
@@ -32,7 +32,7 @@ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore $KEYSTORE -stor
 # ZipAlign of the APK
 zipalign -f -v 4 ./app/build/outputs/apk/release/app-release-unsigned.apk ./app/build/outputs/apk/release/app-release.apk
 
-python basic_upload_apks_service_account.py nextline.com.nextline_android ./app/build/outputs/apk/release/app-release.apk $GPLAYKEY
+python /scripts/basic_upload_apks_service_account.py nextline.com.nextline_android ./app/build/outputs/apk/release/app-release.apk $GPLAYKEY
 
 # Deployment notification
 aws lambda invoke --function-name Deployment-notifier --log-type Tail --payload "{ \"success\":\"succeded\" }" outputfile.txt

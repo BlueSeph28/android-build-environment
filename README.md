@@ -49,6 +49,8 @@ Inside this script you can specify the steps to build and deliver the image.
 
 [run.sh](run.sh)
 
+The docker image will use a volume the current directory and run the script when running.
+
 ---
 
 You may start the image with some environment variables.

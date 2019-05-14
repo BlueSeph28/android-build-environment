@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-MAINTAINER BlueSeph28 - Luis Fernando López Ruiz
+LABEL mantainer="BlueSeph28 - Luis Fernando López Ruiz"
 
 WORKDIR /android-project
 
@@ -47,7 +47,6 @@ RUN curl -s https://dl.google.com/android/repository/sdk-tools-linux-${VERSION_S
 # Accept Terms and conditions of ANDROID SDK
 RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
 
-ADD basic_upload_apks_service_account.py /android-project
-ADD run.sh /android-project
+VOLUME [ "." "/scripts" ]
 
-ENTRYPOINT [ "bash", "/android-project/run.sh" ]
+ENTRYPOINT [ "bash", "/scripts/run.sh" ]
